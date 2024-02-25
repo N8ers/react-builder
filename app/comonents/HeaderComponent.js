@@ -1,6 +1,6 @@
 import PropTypes from "prop-types"
 
-function HeaderComponent({ headerMessage }) {
+export default function HeaderComponent({ headerMessage }) {
   return <h1>{headerMessage}!</h1>
 }
 
