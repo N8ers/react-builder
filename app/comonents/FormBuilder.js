@@ -1,5 +1,3 @@
-import { useState } from "react"
-
 import TextInput from "./textInput"
 import HeaderComponent from "./HeaderComponent"
 
@@ -30,33 +28,20 @@ export class Builder {
     return this
   }
 
-  addTextInput() {
-    const componentProps = {}
+  addTextInput(label) {
+    const componentProps = {
+      label,
+    }
     this.formFields.push({ componentName: TextInput, componentProps })
     return this
   }
 
   buildForm() {
     return (
-      <form>
+      <form style={{ border: "1px solid black" }}>
         {this.formFields.map((formField) => getFormComponents(formField))}
         <button>submit</button>
       </form>
     )
   }
-}
-
-export default function FormBuilder() {
-  const [formState, setFormState] = useState({})
-  // const [form, setForm] = useState({})
-
-  const newForm = new Builder()
-  console.log(newForm)
-  // const form = (
-  //   <>
-  //     <TextInput />
-  //   </>
-  // )
-
-  return { form: newForm.form, formState }
 }

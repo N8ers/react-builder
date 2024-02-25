@@ -4,7 +4,7 @@ export default function Index() {
   const formBuilder = new Builder()
   const form = formBuilder
     .addHeader("hi hi")
-    .addTextInput()
+    .addTextInput("First Name: ")
     .addHeader("i am the second header!")
     .buildForm()
 
